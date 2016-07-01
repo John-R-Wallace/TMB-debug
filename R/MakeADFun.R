@@ -20,7 +20,7 @@ function(..., DLL = TMB:::getUserDLL()){
     ## Try running
     Bdg_output <- gdbsource(paste0(DLL, ".R"))
     # Sort out outcomes
-    if( length(grep("#0",Bdg_output)) > 0 ){
+    if(any(grepl("#0", Bdg_output)){
         message("Model has errors")
         print(Bdg_output)
         stop()
